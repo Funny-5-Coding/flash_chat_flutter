@@ -30,9 +30,11 @@ class _WelcomeScreenState extends State<WelcomeScreen>
       end: Colors.white,
     ).animate(controller);
 
-    controller.forward();
+    animation.addListener(() {
+      setState(() {});
+    });
 
-    setState(() {});
+    controller.forward();
   }
 
   @override
@@ -44,13 +46,13 @@ class _WelcomeScreenState extends State<WelcomeScreen>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: animation.value,
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 24.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: <Widget>[
+          children: [
             Row(
               children: [
                 Hero(
@@ -61,6 +63,7 @@ class _WelcomeScreenState extends State<WelcomeScreen>
                   ),
                 ),
                 TypewriterAnimatedTextKit(
+                  isRepeatingAnimation: false,
                   text: ['Flash Chat'],
                   textStyle: TextStyle(
                     fontSize: 45.0,
