@@ -78,6 +78,7 @@ class _ChatScreenState extends State<ChatScreen> {
                             Colors.lightBlueAccent),
                       ),
                       onPressed: () {
+                        messageTextController.clear();
                         _firestore.collection('messages').add({
                           'text': messageText,
                           'sender': loggedInUser.email,
