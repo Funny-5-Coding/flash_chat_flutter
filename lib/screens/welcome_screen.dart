@@ -54,6 +54,7 @@ class _WelcomeScreenState extends State<WelcomeScreen>
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Row(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Hero(
                   tag: 'logo',
@@ -65,7 +66,7 @@ class _WelcomeScreenState extends State<WelcomeScreen>
                 TypewriterAnimatedTextKit(
                   text: ['Flash Chat'],
                   textStyle: TextStyle(
-                    fontSize: 45.0,
+                    fontSize: 40,
                     fontWeight: FontWeight.w900,
                   ),
                 ),
